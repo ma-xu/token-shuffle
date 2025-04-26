@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>Token-Shuffle Gallery</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/html/styles.min.css">
+    </head>
+    <body>
+        <header>
+        </header>
+        <main role="main">
+            <section class="container my-5 bg-light rounded text-center">
+                <div class="container">
+                    <h1>Token-Shuffle:</h1>
+                    <h1>Towards High-Resolution Image Generation with Autoregressive Models</h1>
+                    <p class="lead text-muted"><br>Xu Ma<sup>1</sup>, Peize Sun<sup>3</sup>, Haoyu Ma<sup>2</sup>, Hao Tang<sup>3</sup>, Chih-Yao Ma<sup>2</sup>, Jialiang Wang<sup>2</sup>, Kunpeng Li<sup>2</sup>, Xiaoliang Dai<sup>2</sup>, Yujun Shi<sup>4</sup>, Xuan Ju<sup>5</sup>, Yushi Hu<sup>6</sup>, Artsiom Sanakoyeu<sup>2</sup>, Felix Juefei-Xu<sup>2</sup>, Ji Hou<sup>2</sup>, Junjiao Tian<sup>2</sup>, Tao Xu<sup>2</sup>, Tingbo Hou<sup>2</sup>, Yen-Cheng Liu<sup>2</sup>, Zecheng He<sup>2</sup>, Zijian He<sup>2</sup>, Matt Feiszli<sup>3</sup>, Peizhao Zhang<sup>2</sup>, Peter Vajda<sup>2</sup>, Sam Tsai<sup>2</sup>, Yun Fu<sup>1</sup><br></p>
+                    <p><sup>1</sup>NEU, <sup>2</sup>Meta GenAI, <sup>3</sup>Meta FAIR, <sup>4</sup>NUS, <sup>5</sup>CUHK, <sup>6</sup>UW</p>
+                    <p><a class="btn btn-primary my-2" href="https://arxiv.org/abs/2504.17789">paper</a>
+                </div>
+            </section>
+            <section class="container my-5 bg-light rounded">
+                <div class="alert alert-primary text-center" role="alert">
+                    <h2>Abstract</h2>
+                </div>
+                <p class="fs-5">
+                    Autoregressive (AR) models, long dominant in language generation, are increasingly applied to image synthesis but are often considered less competitive than Diffusion-based models. A primary limitation is the substantial number of image tokens required for AR models, which constrains both training and inference efficiency, as well as image resolution. To address this, we present Token-Shuffle, a novel yet simple method that reduces the number of image tokens in Transformer. Our key insight is the dimensional redundancy of visual vocabularies in Multimodal Large Language Models (MLLMs), where low-dimensional visual codes from visual encoder are directly mapped to high-dimensional language vocabularies. Leveraging this, we consider two key operations: token-shuffle, which merges spatially local tokens along channel dimension to decrease the input token number, and token-unshuffle, which untangles the inferred tokens after Transformer blocks to restore the spatial arrangement for output. Jointly training with textual prompts, our strategy requires no additional pretrained text-encoder and enables MLLMs to support extremely high-resolution image synthesis in a unified next-token prediction way while maintaining efficient training and inference. For the first time, we push the boundary of AR text-to-image generation to a resolution of 2048x2048 with gratifying generation performance. In GenAI-benchmark, our 2.7B model achieves 0.77 overall score on hard prompts, outperforming AR models LlamaGen by 0.18 and diffusion models LDM by 0.15. Exhaustive large-scale human evaluations also demonstrate our prominent image generation ability in terms of text-alignment, visual flaw, and visual appearance. We hope that Token-Shuffle can serve as a foundational design for efficient high-resolution image generation within MLLMs.
+                </p>
+            </section>
+            <section>
+                <div class="container">
+                    <div class="alert alert-primary text-center" role="alert">
+                        <h3>Token-Shuffle predicts next shuffled / fused tokens to generate images</h3>
+                    </div>
+                    <div class="row" id="video">
+                        <div class="col-md-6" >
+                            <div class="card mb-6 shadow-sm">
+                                <video autoplay muted loop>
+                                    <source src="https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/videos/1_00141.mp4" data-src="https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/videos/1_00141.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                        <div class="col-md-6" >
+                            <div class="card mb-6 shadow-sm">
+                                <video autoplay muted loop>
+                                    <source src="https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/videos/3_00199.mp4" data-src="https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/videos/3_00199.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="container my-5 bg-light rounded">
+                <div class="alert alert-primary text-center" role="alert">
+                    <h2>Key Content</h2>
+                </div>
+                <img src="https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/contents/motivation.png" class="img-fluid rounded d-block mx-auto" alt=""><br>
+                <img src="https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/contents/efficiency.png" class="img-fluid rounded d-block mx-auto" alt=""><br>
+                <img src="https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/contents/main_content.png" class="img-fluid rounded d-block mx-auto" alt=""><br>
+                <img src="https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/contents/human_eval.png" class="img-fluid rounded d-block mx-auto" alt=""><br>
+            </section>
+            <div class="album py-5 bg-light">
+                <div class="container">
+                    <div class="alert alert-primary text-center" role="alert">
+                        <h3>Gallery (1024x1024 resolution)</h3>
+                    </div>
+                    <div class="row" id="image_512">
+                    </div>
+                </div>
+            </div>
+            <section class="container my-5 bg-light rounded">
+                <div class="content">
+                    <h2>BibTex</h2>
+                    <code> @article{ma2025tokenshuffle,<br>
+                    &nbsp;&nbsp;title={Token-Shuffle: Towards High-Resolution Image Generation with Autoregressive Models},<br>
+                    &nbsp;&nbsp;author={Ma, Xu and Sun, Peize and Ma, Haoyu and Tang, Hao and Ma, Chih-Yao and Wang, Jialiang and Li, Kunpeng and Dai, Xiaoliang and Shi, Yujun and Ju, Xuan and Hu, Yushi and Sanakoyeu, Artsiom  and Xu, Felix Juefei and Hou, Ji and Tian, Junjiao and Xu, Tao and Hou, Tingbo and Liu, Yen-Cheng and He, Zecheng and He, Zijian and Feiszli, Matt and Zhang, Peizhao  and Vajda, Peter and Tsai, Sam  and Fu, Yun},<br>
+                    &nbsp;&nbsp;journal={arXiv preprint arXiv:2504.17789},<br>
+                    &nbsp;&nbsp;year={2025}<br>
+                    } </code>
+                </div>
+            </section>
+            <section class="container my-5 bg-light rounded">
+                <div class="content">
+                    <br>
+                    Acknowledgements: We thank <a href="https://peizesun.github.io/llamagen/">LlamaGen</a> for providing the page templates.
+                    <br>
+                </div>
+            </section>
+        </main>
+        <footer class="text-muted">
+            <!--  <div class="container">
+                <p class="float-right"><a href="#">Back To Top</a></p>
+                <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
+                <p>New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a href="/docs/4.4/getting-started/introduction/">getting started guide</a>.</p>
+                </div> -->
+        </footer>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+        <script>
+            // List of content (text and image URLs)
+            const contentList = [
+                { text: 'A piece of white paper on the grass, the left side of the paper is filled with writing while the right side is empty.', img: 'https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/1024/1.png' },
+                { text: 'A single snowflake falls gracefully among others swirling chaotically in the wind.', img: 'https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/1024/2.png' },
+                { text: 'A snowman with a hat,  no scarf around its neck.', img: 'https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/1024/3.png' },
+                { text: 'In the pond, two ducks swim near each other: the larger one has a bright green head, while the smaller one is all brown.', img: 'https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/1024/4.png' },
+                { text: 'A big green apple next to a small red apple on a kitchen counter.', img: 'https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/1024/5.png' },
+                { text: 'A coat with no buttons, hanging loosely.', img: 'https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/1024/6.png' },
+                { text: 'A starry night sky with more visible stars than the number of lights in the city below.', img: 'https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/1024/7.png' },
+                { text: 'Two apples on a kitchen counter.', img: 'https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/1024/8.png' },
+                { text: 'Four pencils in a cup.', img: 'https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/1024/9.png' },
+                { text: 'Three cookies on a plate.', img: 'https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/1024/10.png' },
+                { text: 'Top-down view of a whole cake on the table with words "Happy Days" written on the cake.', img: 'https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/1024/11.png' },
+                { text: 'a photo of a potted plant and a backpack', img: 'https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/1024/12.png' },
+                { text: 'a photo of a potted plant and a donut', img: 'https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/1024/13.png' },
+                { text: 'a photo of three fire hydrants', img: 'https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/1024/14.png' },
+                { text: 'a photo of a purple cup', img: 'https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/1024/15.png' },
+                { text: 'a photo of an orange orange', img: 'https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/1024/16.png' },
+                { text: 'a photo of a red vase', img: 'https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/1024/17.png' },
+                { text: 'a photo of a purple carrot', img: 'https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/1024/18.png' },
+                { text: 'a photo of a purple backpack', img: 'https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/1024/19.png' },
+                { text: 'a photo of a red potted plant', img: 'https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/1024/20.png' },
+                { text: 'a photo of a black teddy bear', img: 'https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/1024/21.png' },
+                { text: 'a photo of a yellow fork', img: 'https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/1024/22.png' },
+                { text: 'a photo of a bench left of a bear', img: 'https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/1024/23.png' },
+                { text: 'a photo of a broccoli above a bottle', img: 'https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/1024/24.png' },
+                { text: 'A 3D chibi bunny girl with pink hair in a sailor suit stands confidently on a reflective podium, set against a cloudy, sunny sky.', img: 'https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/1024/25.png' },
+                { text: 'A stylish Shiba Inu with fox-red fur sits regally on a turquoise velvet cushion, wearing a maroon beret and a sleek black turtleneck.', img: 'https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/1024/26.png' },
+                { text: 'A vibrant Greek salad with lettuce, tomatoes, cucumbers, olives, feta, and olive oil, arranged on a white plate.', img: 'https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/1024/27.png' },
+                { text: 'A rustic wood cabin with a sloping roof and stone chimney, nestled in a forest of tall evergreens. Hand-carved doors and windows, a creaky porch, and a swaying rocker add to the peaceful, secluded atmosphere.', img: 'https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/1024/28.png' },
+                { text: 'A stunning sunset over a calm ocean, with vibrant orange, pink, and purple hues in the sky. The sun dips below the horizon, casting a warm glow on the gentle waves, while scattered clouds add texture to the scene.', img: 'https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/1024/29.png' },
+                { text: 'A small brown bird with a red crest stands beside tall, swaying grasses. Its black eyes gleam as it surveys the surroundings, with wildflowers and a clear blue sky in the background.', img: 'https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/1024/30.png' },
+                { text: 'A clear glass jar filled with colorful gumballs and mixed nuts sits on a white countertop.', img: 'https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/1024/31.png' },
+                { text: 'Three wolve moon but with cats instead of wolves', img: 'https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/1024/32.png' },
+                { text: 'A bronze statue of a historical figure holding a book sits on a weathered bench amid greenery and flowers, exuding serenity and intrigue.', img: 'https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/1024/33.png' },
+                { text: 'A colorful mix of fruits and vegetables—apple, orange, grapes, pear, lettuce, tomato, and squash—sits on a wooden cutting board, glowing in warm golden light.', img: 'https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/1024/34.png' },
+                { text: 'A majestic Tree of Life glows under volumetric light, its vibrant leaves and intricate details creating an enchanting, serene scene.', img: 'https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/1024/35.png' },
+                { text: 'A plate of Argentinean asado with grilled beef, chimichurri, and roasted vegetables sits on a rustic table under a warm golden glow.', img: 'https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/1024/36.png' },
+                { text: 'An ancient terracotta vase with vibrant toucans playing soccer in hieroglyphic style rests on a marble pedestal, glowing in warm golden light.', img: 'https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/1024/37.png' },
+                { text: 'A cream-framed doorway opens to a minimalist kitchen with wood floors, white cabinets, and soft light.', img: 'https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/1024/38.png' },
+                { text: 'A 3D chibi bunny girl with pink hair in a sailor suit stands confidently on a reflective podium, set against a cloudy, sunny sky.', img: 'https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/1024/39.png' },
+                { text: 'A cuddly panda in a Darth Vader costume sits on a white surface, its cute face contrasting humorously with the dark attire against a light-gray background.', img: 'https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/1024/40.png' },
+                { text: 'Three teddy bears, each a different color', img: 'https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/1024/41.png' },
+                { text: 'A medieval town with a grand castle, bustling market square, cobblestone streets, and timber-framed buildings, all under a clear blue sky.', img: 'https://storage-xu.s3.us-east-2.amazonaws.com/Token_Shuffle/1024/42.png' },
+            ];
+            contentList.sort(() => Math.random() - 0.5);
+            
+            // Loop through the content list and add content dynamically
+            $(document).ready(function () {
+                contentList.forEach(item => {
+                    $('#image_512').append(`
+                        <div class="col-md-4" >
+                                <div class="card mb-4 shadow-sm">
+                                    <img class="bd-placeholder-img" width="100%"  src="${item.img}">
+                                    <div class="card-body">
+                                        <p class="card-text">${item.text}<br></p>
+                                    </div>
+                                </div>
+            
+                            </div>
+                    `);
+                });
+            });
+        </script>
+    </body>
+</html>
